@@ -6,27 +6,11 @@ const assertEqual = function (actual, expected) {
   }
 };
 
-// TEST CODE
-
-// const eqObjects = function (object1, object2) {
-//   for (let obj1 in object1) {
-//     // first loop
-//     for (let obj2 in object2) {
-//       // second loop
-
-//     }
-//   }
-// };
-
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-
 const eqArrays = (firstArray, secondArray) => {
   if (firstArray.length !== secondArray.length) {
     return false;
   } else {
     for (let i = 0; i < firstArray.length; i++) {
-      ß;
       const elem1 = firstArray[i];
       const elem2 = secondArray[i];
       if (Array.isArray(elem1) && Array.isArray(elem2)) {
@@ -62,5 +46,13 @@ const eqObjects = (object1, object2) => {
     return true;
   } else {
     return false;
+  }
+};
+
+const assertObjectsEqual = (actual, expected) => {
+  if (eqObjects(actual, expected)) {
+    console.log("✅✅✅ Assertion Passed:", actual, "===", expected);
+  } else {
+    console.log("❌❌❌ Assertion Failed:", actual, "!==", expected);
   }
 };
